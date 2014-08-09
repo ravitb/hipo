@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title></title>
+<link type="text/css" rel="stylesheet" href="style.css" />
+<script src="rollover.js" type="text/javascript"></script>
+</head>
+<body id="page_1" onload="MM_preloadImages('images/m_1_hov.gif','images/m_2_hov.gif','images/m_3_hov.gif','images/m_4_hov.gif','images/m_5_hov.gif')">
+<div class="bgr">
+	<table class="center_1">
+        <tr>
+          <td class="header">
+            <div class="logo"><a href="index.html"><img src="images/logo.gif" alt="" /></a><br /></div>
+                <img src="images/m_1_hov.gif" alt=" " width="179" height="58"  id="Image2" /><a href="index-2.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','images/m_2_hov.gif',1)"><img src="images/m_2.gif" alt=" " width="146" height="58"  id="Image3" /></a><a href="index-3.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','images/m_3_hov.gif',1)"><img src="images/m_3.gif" alt=" " width="145" height="58"  id="Image4" /></a><a href="index-4.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','images/m_4_hov.gif',1)"><img src="images/m_4.gif" alt=" " width="137" height="58"  id="Image5" /></a><a href="index-5.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/m_5_hov.gif',1)"><img src="images/m_5.gif" alt=" " width="156" height="58"  id="Image6" /></a><br /></td>
+        </tr>
+        <tr>
+            <td class="content">
+                <table class="h_table">
+                    <tr>
+                        <td class="column">
+                        	<img src="images/spacer.gif" alt="" width="287" height="1" /><br /></td>
+                        <td class="column_1">
+                            	<div class="side_left">
+                                	<div class="side_right">
+                                    	<div class="side_top">
+                                        	<div class="side_bot">
+                                            	<div class="left_top">
+                                                	<div class="right_top">
+                                                    	<div class="left_bot">
+                                                        	<div class="right_bot">
+                                                            	<div class="h"><img src="images/2_h_1.gif" alt="" /><br /></div>
+                                                            	<div class="indent txt">
+                                                                	<strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </strong>
+                                                                    <div class="in5"></div>
+                                                                    In consectetuer tincidunt lectus. Fusce orci felis, 
+                                                                    molestie ut, ornare quis, rhoncus at, dolor.
+                                                                    <div class="in15"></div>
+                                                                    <img src="images/2_pic_1.jpg" alt="" /><br />
+                                                                    <div class="in10"></div>
+                                                                    Duis sit amet neque. Duis odio nulla, <strong class="txt_1">tincidunt sit amet,</strong> 
+                                                                    vulpu- tate a, auctor et, tortor. Nulla sit amet lectus at 
+                                                                    nunc lacinia laoreet am enim purus, cursus id, con- 
+                                                                    sectetuer...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="#">read more</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></td>
+                      <td class="column_2">
+                            <div class="h"><img src="images/2_h_2.gif" alt="" /><br /></div>
+                            <div class="indent">
+                                <strong class="txt_1">Praesent eget leo</strong><br />
+                                Nulla dapibus massa. Curabitur mollis lacinia 
+                                mauris. Phasellus rhoncus, sem vel tempus.<br /><br />
+                                <strong class="txt_1">Rhoncus turpis metus</strong><br /> 
+                                Convallis nibh, non elementum nunc orci ut nisl. 
+                                Vivamus ven- enatis tristique quam.<br />
+                                <br />
+                                <strong class="txt_1">Donec non nunc</strong><br />
+                                Morbi condimentum pede ut nunc. Sed sapien. 
+                                Vivamus leo. Praese fermentum ultrices dui.<br /><br />
+                                <strong class="txt_1">Mauris venenatis odio </strong><br />
+                                At rutrum vestibulum, justo lacus suscipit 
+                                nunc, at vehicula massa justo non sem. 
+                            </div></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+   <div class="footer">
+   		Connect &copy; 2007 | <a href="index-6.html">Privacy Policy</a>
+   </div>
+
+
+<script src="../../jquery-2.1.1.min.js"></script>
+<script src="../../jquery.ba-postmessage.js"></script>
+<script>
+    (function($) {
+
+        window.ParadeSrc = {
+
+            init: function() {
+                console.log('test iframe');
+                // $.postMessage(
+                //     'hello world',
+                //     '*'
+                // );
+
+                $.receiveMessage(
+                    function(e){
+                        alert( e.data );
+                    },
+                    function(param) {
+                        return true;
+                    }
+
+                );
+            }
+
+        }
+
+        $(document).ready(function() {
+            ParadeSrc.init();
+        });
+
+    })($);
+
+
+
+</script>
+</body>
+</html>

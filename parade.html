@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+
+<iframe id="myFrame" src="free_flash_template/site/index-1.html" frameborder="0"></iframe>
+
+<script src="jquery-2.1.1.min.js"></script>
+<script src="jquery.ba-postmessage.js"></script>
+<script>
+    (function($) {
+
+        window.Parade = {
+
+            init: function() {
+                // $('<iframe />', { id: 'myFrame', src: 'free_flash_template/site/index-1.html' }).appendTo('body');
+                var iframe = $('#myFrame').get(0);
+
+                // $.receiveMessage(
+                //     function(e){
+                //         alert( e.data );
+                //     },
+                //     function(param) {
+                //         return true;
+                //     }
+
+                // );
+
+                window.setTimeout(
+                    function() {
+                        console.log('test parent', iframe);
+                        $.postMessage(
+                            'hello world2',
+                            '*',
+                            iframe.contentWindow
+
+                        );
+                    }, 500);
+
+                console.log('test2');
+
+
+                // iframe.postMessage( {some: 'data'}, 'free_flash_template/site/index-1.html');
+            }
+        }
+
+        $(document).ready(function() {
+            Parade.init();
+        });
+
+    })($);
+
+
+
+</script>
+</body>
+</html>

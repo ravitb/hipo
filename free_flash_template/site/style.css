@@ -1,0 +1,197 @@
+html {height:100%;}
+body{margin:0; padding:0; background: url(images/fill.gif) left top repeat;}
+form, td, textarea, ul {margin:0; padding:0;}
+img{ vertical-align:top;}
+table, td {border-collapse:collapse;}
+table, td, img {border:0;}
+td, tr {vertical-align:top; text-align:left}
+td{
+	font:11px/15px arial, helvetica, sans-serif;
+	color:#CECECE;
+}
+.h_table{ height:100%;}
+.w_table{ width:100%;}
+.clear{ clear:both;}
+.right{ text-align:right;}
+
+/*forms*/
+form{ display:inline;}
+input, textarea, select{font:11px/14px Arial, Geneva, sans-serif; color:#CECECE; border:0px none; background:#3E3C3E;}
+input{ width:172px; height:17px;}
+textarea{width:172px; height:121px; overflow:auto;}
+.inp_h{ height:25px; margin:0 0 4px 0;}
+/*end forms*/
+
+
+/*links*/
+a{ text-decoration:none;}
+a:hover{ text-decoration:underline;}
+.link{ background:url(images/bull.gif) 0 6px no-repeat; padding:0 0 0 9px; color:#F16EAA; font-weight:bold;}
+.link_1{ color:#F06EAA; font-weight:bold;}
+/*end links*/
+
+/*txt*/
+strong{ color:#FFFFFF; font-weight:bold;}
+.txt{ color:#FFFFFF;}
+.txt_1{ color:#67C9F0; font-weight:bold;}
+.txt_2{ color:#F06EAA; font-weight:bold;}
+/*end txt*/
+
+/*global*/
+.row{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.row_1{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.row_2{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.block{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.block_1{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.block_2{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.block_3{ background:none; width:auto; height:auto; margin:0; padding:0;}
+.indent{ margin:0; padding:0;}
+.in5{ padding-top:5px;}
+.in10{ padding-top:10px;}
+.in15{ padding-top:15px;}
+.in15{ padding-top:20px;}
+/*end global*/
+
+ul {list-style:none;}
+li a { 
+	background:url(images/bull_1.gif) 0 5px no-repeat;
+	padding:0 0 0 9px;
+	line-height:20px;
+	font-weight:bold;
+	color:#67C9F0;
+	text-decoration:none;
+}
+li a:hover { 
+	text-decoration:underline;
+}
+
+.center_1{text-align:left; width:766px; background:url(images/bgr.gif) left top repeat-x;}
+.bgr{ background:url(images/bgr.gif) left top repeat-x #4B4A4B;}
+
+/*header*/
+.header{ height:180px; padding:0 0 0 1px;}
+.header .logo{ padding:0 0 0 191px; height:122px;}
+/*end header*/
+
+/*******************table #1*********************************/
+.left_top{ background:url(images/left_top.gif) left top no-repeat;}
+.right_top{ background:url(images/right_top.gif) right top no-repeat;}
+.left_bot{ background:url(images/left_bot.gif) left bottom no-repeat;}
+.right_bot{ background:url(images/right_bot.gif) right bottom no-repeat; width:100%;}
+
+.side_left{ background:url(images/side_left.gif) left top repeat-y #3E3C3E;}
+.side_right{ background:url(images/side_right.gif) right top repeat-y;}
+.side_top{ background:url(images/side_top.gif) left top repeat-x;}
+.side_bot{ background:url(images/side_bot.gif) left bottom repeat-x;}
+/*******************end table #1*********************************/
+
+/*********************** page ***************************************/
+#page .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page .column_1{ width:100%;}
+#page .column_1 .row { padding:38px 0 0 0;}
+#page .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page .column_1 .row .indent{ padding:0 50px 25px 35px;}
+#page .column_1 .row .h{ padding:0 0 3px 34px;}
+
+#page .column_1 .row_1 { padding:0 29px 46px 0;}
+#page .column_1 .row_1 .h{ padding:20px 0 3px 34px;}
+#page .column_1 .row_1 .indent{ padding:0 35px 25px 34px;}
+#page .column_1 .row_1 .block{ width:60%;}
+#page .column_1 .row_1 .block_1{ width:40%;}
+/*********************** end page ***************************************/
+
+/*********************** page_1 ***************************************/
+#page_1 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_1 .column_1{ width:100%;}
+#page_1 .column_1 .row { padding:38px 0 0 0;}
+#page_1 .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page_1 .column_1 .row .indent{ padding:0 50px 25px 35px;}
+#page_1 .column_1 .row .h{ padding:0 0 3px 34px;}
+
+#page_1 .column_1 {width:47%; padding:38px 0 46px 0;}
+#page_1 .column_1 .h{ padding:23px 0 3px 35px;}
+#page_1 .column_1 .indent{ padding:0 25px 17px 34px;}
+
+#page_1 .column_2 { width:53%;}
+#page_1 .column_2  .h{ padding:38px 0 3px 28px;}
+#page_1 .column_2  .indent{ padding:0 60px 25px 28px;}
+/*********************** end page_1 ***************************************/
+
+/*********************** page_2 ***************************************/
+#page_2 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_2 .column_1{ width:100%;}
+#page_2 .column_1 .row { padding:38px 0 0 0;}
+#page_2 .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page_2 .column_1 .row .indent{ padding:0 50px 28px 35px;}
+#page_2 .column_1 .row .h{ padding:0 0 3px 34px;}
+#page_2 .column_1 .row .float{ float:left; margin:0 20px 0 0;}
+
+#page_2 .column_1 .row_1 { padding:0 29px 46px 0;}
+#page_2 .column_1 .row_1 .h{ padding:20px 0 3px 34px;}
+#page_2 .column_1 .row_1 .indent{ padding:0 35px 20px 34px;}
+#page_2 .column_1 .row_1 .block{ width:55%;}
+#page_2 .column_1 .row_1 .block_1{ width:45%;}
+/*********************** end page_2 ***************************************/
+
+/*********************** page_3 ***************************************/
+#page_3 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_3 .column_1{ width:100%;}
+#page_3 .column_1 .row { padding:38px 0 41px 0;}
+#page_3 .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page_3 .column_1 .row .indent{ padding:0 40px 0 35px;}
+#page_3 .column_1 .row .h{ padding:0 0 3px 34px;}
+#page_3 .column_1 .row .float{ float:left; margin:0 20px 27px 0;}
+/*********************** end page_3 ***************************************/
+
+/*********************** page_4 ***************************************/
+#page_4 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_4 .column_1{ width:100%;}
+#page_4 .column_1 .row { padding:38px 0 0 0;}
+#page_4 .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page_4 .column_1 .row .indent{ padding:0 50px 24px 35px;}
+#page_4 .column_1 .row .h{ padding:0 0 3px 34px;}
+#page_4 .column_1 .row .float{ float:left; margin:0 20px 0 0;}
+
+#page_4 .column_1 .row_1 { padding:0 29px 46px 0;}
+#page_4 .column_1 .row_1 .h{ padding:23px 0 0 35px;}
+#page_4 .column_1 .row_1 .indent{ padding:0 15px 20px 35px;}
+/*********************** end page_4 ***************************************/
+
+/*********************** page_5 ***************************************/
+#page_5 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_5 .column_1{ width:53%;}
+#page_5 .column_1 .row { padding:38px 0 0 0;}
+#page_5 .column_1 .row .sep{ background:url(images/sep.gif) 0 0 repeat-y;}
+#page_5 .column_1 .row .indent{ padding:0 55px 25px 35px;}
+#page_5 .column_1 .row .h{ padding:0 0 3px 34px;}
+#page_5 .column_1 .row .float{ float:left; margin:0 20px 0 0;}
+
+#page_5 .column_1 .row_1 { padding:0 29px 46px 0;}
+#page_5 .column_1 .row_1 .h{ padding:19px 0 5px 34px;}
+#page_5 .column_1 .row_1 .indent{ padding:0 25px 27px 35px;}
+
+#page_5 .column_2 { width:47%;}
+#page_5 .column_2 .h{ padding:44px 0 3px 3px;}
+#page_5 .column_2 .indent{ padding:0 35px 20px 0;}
+#page_5 .column_2 .right{margin:4px 0 0 0;}
+/*********************** end page_5 ***************************************/
+
+/*********************** page_6 ***************************************/
+#page_6 .column{ width:287px; background:url(images/bg_left.jpg) left top no-repeat;}
+#page_6 .column_1{ width:100%;}
+#page_6 .column_1 .row { padding:38px 0 71px 0;}
+#page_6 .column_1 .row .indent{ padding:0 40px 0 35px;}
+#page_6 .column_1 .row .h{ padding:0 0 3px 34px;}
+/*********************** end page_6 ***************************************/
+
+/*footer*/
+.footer{ width:766px; height:56px; font:11px/15px arial, helvetica, sans-serif; text-align:center; color:#868586; padding:20px 0 0 0;}
+.footer a{color:#868586;}
+/*end footer*/
+
+
+
+
+
+
+

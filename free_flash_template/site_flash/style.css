@@ -1,0 +1,15 @@
+html {height:100%;}
+body{margin:0; padding:0; background: url(images/fill.gif) left top repeat;}
+form, td, textarea, ul {margin:0; padding:0;}
+img{ vertical-align:top;}
+table, td {border-collapse:collapse;}
+table, td, img {border:0;}
+.center_1{text-align:left; width:766px; background:url(images/bgr.gif) left top repeat-x;}
+.bgr{ background:url(images/bgr.gif) left top repeat-x #4B4A4B;}
+.flash{height:667px;}
+
+
+
+
+
+
