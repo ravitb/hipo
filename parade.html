@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Example</title>
+    <style>
+        .iframe-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        #my-frame {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<iframe id="myFrame" src="free_flash_template/site/index-1.html" frameborder="0"></iframe>
+<div class="iframe-wrapper"><iframe id="my-frame" src="free_flash_template/site/index-1.html" frameborder="0"></iframe></div>
 
 <script src="jquery-2.1.1.min.js"></script>
 <script src="jquery.ba-postmessage.js"></script>
@@ -16,34 +27,35 @@
         window.Parade = {
 
             init: function() {
-                // $('<iframe />', { id: 'myFrame', src: 'free_flash_template/site/index-1.html' }).appendTo('body');
-                var iframe = $('#myFrame').get(0);
 
-                // $.receiveMessage(
-                //     function(e){
-                //         alert( e.data );
-                //     },
-                //     function(param) {
-                //         return true;
-                //     }
+                var that = this;
 
-                // );
+                that.receiveMessage();
+            },
 
-                window.setTimeout(
-                    function() {
-                        console.log('test parent', iframe);
-                        $.postMessage(
-                            'hello world2',
-                            '*',
-                            iframe.contentWindow
+            postMessage: function(options) {
 
-                        );
-                    }, 500);
+                var options = $.extend({message: 'Hello World', destenation: '*'}, options),
+                    iframe  = $('#my-frame').get(0);
 
-                console.log('test2');
+                $.postMessage(
+                    options.message,
+                    options.destatiom,
+                    iframe.contentWindow
+                );
+            },
 
+            receiveMessage: function() {
 
-                // iframe.postMessage( {some: 'data'}, 'free_flash_template/site/index-1.html');
+                $.receiveMessage(
+                    function(e){
+                        console.log('data parent', e.data );
+                    },
+                    function(param) {
+                        return true;
+                    }
+
+                );
             }
         }
 
