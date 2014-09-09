@@ -30,6 +30,13 @@
         text-align: center;
         background-color: #67C9F0;
     }
+
+    .content {
+        display:inline-block;
+        border: solid 1px #000;
+        min-height: 200px;
+        width: 300px;
+    }
 </style>
 <script src="rollover.js" type="text/javascript"></script>
 </head>
@@ -123,14 +130,14 @@
 
 
                 that.receiveMessage();
-                that.selectElemes();
+                that.selectToEdit();
                 that.editWindow = this.initEditWindow();
             },
 
             initEditWindow: function() {
 
                 var that  = this,
-                    $popup = $('<div class="edit-window hidden"><span class="content"></span><div class="fake-btn">Save Me!</div></div>');
+                    $popup = $('<div class="edit-window hidden"><span class="content" contenteditable="true"></span><div class="fake-btn">Save Me!</div></div>');
 
 
                 that.getPropetyString = function($ele) {
@@ -138,7 +145,6 @@
                         eleTagName = $ele.prop("tagName"),
                         index;
 
-                    // debugger;
                     classNames = classNames.length ? '.' + classNames : '';
                     if (!$ele.siblings(eleTagName + classNames).length) {
                         return eleTagName + classNames;
@@ -162,7 +168,7 @@
                     }
 
                     ancestry = ($currentEle.prop('id').length ? '#' + $currentEle.prop('id') : $currentEle.prop("tagName")) +'>'+ ancestry;
-                    console.log('ancestry', ancestry);
+
                     return ancestry;
                 }
 
@@ -174,9 +180,13 @@
                     var $ele     = $(this),
                         $content = $ele.siblings('.content');
 
+                    that.selectedElement.text($content.text());
+
                     that.postMessage({
                         message: {
-                            data: that.selectedElement
+                            text: $content.text(),
+                            rout: that.getElementRout(that.selectedElement)
+
                         },
                         destenation: '*'
                     });
@@ -188,7 +198,7 @@
                 return $popup;
             },
 
-            selectElemes: function($scope) {
+            selectToEdit: function($scope) {
 
                 var that   = this,
                     $scope = $scope || $('* #fake-body *');
@@ -210,10 +220,7 @@
                         px = $ele.offset().top + $ele.outerHeight() + 20,
                         py = $ele.offset().left;
 
-                    that.selectedElement = {
-                        text: $ele.html(),
-                        rout: that.getElementRout($ele)
-                    }
+                    that.selectedElement = $ele;
 
                     that.editWindow.css({top: px, left: py}).removeClass('hidden').find('.content').text($ele.html());
 
@@ -223,7 +230,7 @@
 
             postMessage: function(options) {
 
-                var options = $.extend({message: this.selectElemes, destination: '*'}, options);
+                var options = $.extend({message: this.selectToEdit, destination: '*'}, options);
                 $.postMessage(
                     options.message,
                     options.destination
