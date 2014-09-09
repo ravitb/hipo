@@ -115,6 +115,7 @@
 
         window.ParadeSrc = {
 
+            selectedElement: {},
 
             init: function() {
 
@@ -131,28 +132,58 @@
                 var that  = this,
                     $popup = $('<div class="edit-window hidden"><span class="content"></span><div class="fake-btn">Save Me!</div></div>');
 
+
+                that.getPropetyString = function($ele) {
+                    var classNames = $ele.removeClass('marked-element').prop('class').split(' ').join('.'),
+                        eleTagName = $ele.prop("tagName"),
+                        index;
+
+                    // debugger;
+                    classNames = classNames.length ? '.' + classNames : '';
+                    if (!$ele.siblings(eleTagName + classNames).length) {
+                        return eleTagName + classNames;
+                    } else {
+                        return eleTagName + ':nth-of-type(' + $ele.index() + ')';
+                    }
+                }
+
+
+                that.getElementRout = function($ele) {
+
+                    // bi$('#main-wrapper > div.main-content:nth-of-type(2) > div.mp-box:nth-of-type(4) > div.box-row > ul.cf > li:nth-of-type(2) > p').html( 'Roger Ravit.<br>What do you do best? Create your Gig and start selling. It\'s free, and only takes 5 minutes.' );
+
+                    var ancestry   = that.getPropetyString($ele),
+                        $currentEle = $ele.parent();
+
+                    while (!$currentEle.prop('id').length || !$currentEle.is('body')) {
+
+                        ancestry = that.getPropetyString($currentEle) +'>'+ ancestry;
+                        $currentEle = $currentEle.parent();
+                    }
+
+                    ancestry = ($currentEle.prop('id').length ? '#' + $currentEle.prop('id') : $currentEle.prop("tagName")) +'>'+ ancestry;
+                    console.log('ancestry', ancestry);
+                    return ancestry;
+                }
+
                 $('body').append($popup);
                 $popup.tinyDraggable();
 
                 $('.fake-btn').on('click', function(e) {
 
-                    var $ele    = $(this),
+                    var $ele     = $(this),
                         $content = $ele.siblings('.content');
-                        data    = $content.html();
-
-                    console.log('popup', $popup);
 
                     that.postMessage({
                         message: {
-                            id: $('*').index($ele),
-                            data: data
+                            data: that.selectedElement
                         },
                         destenation: '*'
                     });
-                });
 
-                $content.html('');
-                $popup.addClass('hidden');
+                    $content.html('');
+                    $popup.addClass('hidden');
+                });
 
                 return $popup;
             },
@@ -179,7 +210,11 @@
                         px = $ele.offset().top + $ele.outerHeight() + 20,
                         py = $ele.offset().left;
 
-                    console.log('thus', $ele.offset());
+                    that.selectedElement = {
+                        text: $ele.html(),
+                        rout: that.getElementRout($ele)
+                    }
+
                     that.editWindow.css({top: px, left: py}).removeClass('hidden').find('.content').text($ele.html());
 
                     return false;
@@ -188,7 +223,7 @@
 
             postMessage: function(options) {
 
-                var options = $.extend({message: 'Hello World', destination: '*'}, options);
+                var options = $.extend({message: this.selectElemes, destination: '*'}, options);
                 $.postMessage(
                     options.message,
                     options.destination

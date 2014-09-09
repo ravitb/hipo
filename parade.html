@@ -49,7 +49,7 @@
 
                 $.receiveMessage(
                     function(e){
-                        console.log('data parent', e.data );
+                        console.log('data parent', decodeURIComponent(e.data) );
                     },
                     function(param) {
                         return true;
