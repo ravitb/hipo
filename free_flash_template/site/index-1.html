@@ -149,7 +149,7 @@
                     if (!$ele.siblings(eleTagName + classNames).length) {
                         return eleTagName + classNames;
                     } else {
-                        return eleTagName + ':nth-of-type(' + $ele.index() + ')';
+                        return eleTagName + ':eq(' + $ele.index() + ')';
                     }
                 }
 
@@ -181,6 +181,8 @@
                         $content = $ele.siblings('.content');
 
                     that.selectedElement.text($content.text());
+                    // var str = that.getElementRout(that.selectedElement);
+                    // $(document).find(str).text($content.text());
 
                     that.postMessage({
                         message: {
